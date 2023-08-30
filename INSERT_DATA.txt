@@ -1,0 +1,69 @@
+--- insert concours
+INSERT INTO concours(annee,date_concours,description,frais) VALUES
+(2022,'2022-01-01','concours d''entrée en L1 chez HEI',10.5),
+(2023,'2023-01-01','concours d''entrée en L1 chez HEI',10.5),
+(2023,'2022-01-09','concours d''entrée en L1 chez HEI',10.5),
+(2023,'2023-06-10','concours d''entrée en L1 chez HEI',10.5),
+(2023,'2023-08-01','concours d''entrée en L1 chez HEI',10.5),
+(2023,'2023-08-09','concours d''entrée en L1 chez HEI',10.5),
+(2024,'2024-09-02','concours d''entrée en L1 chez HEI',10.5),
+(2024,'2024-11-01','concours d''entrée en L1 chez HEI',10.5);
+--- insert etudiant 
+INSERT INTO etudiant(prenom,nom,numero_telephone,adresse_email,photo_identite,image_bulletin_terminale,
+serie_bacc,photocopie_note_bacc_certifie,photocopie_cin_certifie,concour_id) VALUES
+('Ritsa','Cristina','0346578821','ritsa1@gmail.com','http://www.photos.com)','https://blt.com',
+'D','https://sujet2.com','https://cin.com',1),
+('Marie','Agathe','0346323233','marie1@gmail.com','http://www.photos11.com)','https://bllt.com',
+'A2','https://sujet3.com','https://cin1.com',2),
+('Raphael','Elysé','0342222222','rapha@gmail.com','http://www.photos12.com)','https://bltttt.com',
+'S','https://sujet4.com','https://cin2.com',2),
+('George','RADO','0346378821','rado@gmail.com','http://www.dqdsq.com)','https://blt1.com',
+'D','https://sujet2.com','https://cin3.com',3),
+('Taratra','Naid','0306578821','naid@gmail.com','http://www.photosanajs.com)','https://blthdhgz.com',
+'C','https://sujet2dsdf.com','https://cinozjh.com',3),
+('Elisa','Razaz','0347578821','elisa@gmail.com','http://www.photoshdhdjdhd.com)','https://bltsqddsd.com',
+'L','https://sujet2tegsh.com','https://cinqz.com',3),
+('Zoelinoro','Cristina','0347778821','zo@gmail.com','http://www.photoszo.com)','https://bltsqsqd.com',
+'A1','https://sujetdd.com','https://cinzzeez.com',4),
+('Rivo','Rakoto','0346576621','rivo@gmail.com','http://www.photosdffsf.com)','https://bltgd.com',
+'C','https://sujet20.com','https://cinddss.com',5),
+('Njara','Annah','0349978821','anah@gmail.com','http://www.photosdsdf.com)','https://bltdqsd.com',
+'D','https://sujet2dssz.com','https://cin111.com',5),
+('Celestin','Rak','0346668821','ceel@gmail.com','http://www.photosdsdfs.com)','https://bltzazza.com',
+'D','https://sujet2dsfsfsfsd.com','https://cinsdsdfsz.com',5);
+--- insert sujet 
+INSERT INTO sujet(url_sujet_maths,url_sujet_français,id_concours) VALUES
+('https://dshdfsfsdhjj.com','https://dsfhsdffsdh',1),
+('https://fjfgd.com','https://fjfjdh',2),
+('https://dkjh.com','https://dfdhdj.com',3),
+('https://hfhfjeh.com','https://jdhdjfhd.com',4),
+('https://hdhdss.com','https://fjfeu.com',5),
+('https://hsue.com','https://jddsskl.com',6);
+--- insert note 
+INSERT INTO note(id_etudiant,id_concours,français,mathematique) VALUES
+(1,1,12.3,14.5),
+(2,2,11.9,15.2),
+(3,2,10.9,11.2),
+(4,3,15.2,15.2),
+(5,3,12.3,11.1),
+(6,3,18.5,19.1),
+(8,5,10.1,11.6),
+(9,5,19.1,10.5),
+(10,5,17.5,12.7);
+--- insert jury
+INSERT INTO jury(prenom,nom,numero_telephone,adresse_email) VALUES
+('Niry','Bien','0383333333','niry@gmail.com'),
+('Esther','Therèse','0342222222','esy@gmail.com'),
+('Ursule','Delan','0326666666','del@gmail.com'),
+('Miandry','Soa','0340098787','soa@gmail.com'),
+('Faneva','Njarya','034767888','njar@gmail.com'),
+('Rapha','Fenomila','0326766689','rapha@gmail.com');
+--- insert concours_a_jury
+INSERT INTO concours_a_jury(id_concours,id_jury) VALUES
+(1,1),
+(2,4),
+(3,4),
+(4,5),
+(5,2),
+(6,1),
+(7,2);

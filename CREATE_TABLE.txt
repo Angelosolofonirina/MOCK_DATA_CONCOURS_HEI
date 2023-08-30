@@ -1,0 +1,50 @@
+create table concours(
+id serial primary key,
+annee int not null,
+date_concours date not null,
+description text,
+frais float not null
+);
+create table etudiant(
+id serial primary key,
+prenom varchar(200) not null,
+nom varchar(200),
+numero_telephone varchar(10) not null,
+adresse_email varchar(200) unique not null,
+photo_identite varchar(300) not null,
+image_bulletin_terminale varchar(300) not null,
+serie_bacc varchar(9) not null,
+photocopie_note_bacc_certifie varchar(300) not null,
+photocopie_cin_certifie varchar(300) not null,
+date_inscription date default current_date,
+concour_id INT REFERENCES concours(id)
+);
+
+create table jury(
+id serial primary key,
+prenom varchar(200) not null,
+nom varchar(200),
+numero_telephone varchar(10) not null,
+adresse_email varchar(200) unique not null
+);
+
+create table concours_a_jury(
+id serial primary key,
+id_concours int references concours(id) not null,
+id_jury int references jury(id)
+);
+
+create table sujet(
+id serial primary key,
+url_sujet_maths varchar(300) not null,
+url_sujet_français varchar(300) not null,
+id_concours int not null references concours(id)
+);
+
+create table note(
+id serial primary key,
+id_etudiant int references etudiant(id),
+id_concours int references concours(id),
+français float not null,
+mathematique float not null
+);
